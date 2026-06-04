@@ -1,0 +1,43 @@
+# Nutrition Tracker configuration
+# Edit these targets to match your personal needs.
+
+profile:
+  name: "Me"
+  age: 30
+  sex: "female"          # used only as a label; targets below drive the logic
+
+# Daily Recommended Dietary Allowances (RDA) — your daily targets.
+# Units: calories=kcal, protein/carbs/fat/fiber=g, iron/calcium/vitamin_c=mg, vitamin_d=mcg
+rda:
+  calories: 2000
+  protein: 50
+  carbs: 275
+  fat: 70
+  fiber: 28
+  iron: 18
+  calcium: 1000
+  vitamin_c: 90
+  vitamin_d: 15
+
+# Acceptable daily calorie band. Outside this band gets flagged on the dashboard.
+calorie_range:
+  min: 1600
+  max: 2400
+
+# Deficiency flagging thresholds (fraction of RDA, averaged over the selected range):
+#   intake < deficiency_threshold * RDA  -> "Deficient"
+#   intake < low_threshold * RDA         -> "Low"
+#   otherwise                            -> "OK"
+deficiency_threshold: 0.7
+low_threshold: 0.9
+
+# Ingredient categories recognised by the food database.
+categories:
+  - vegetable
+  - lentil
+  - non-veg
+  - grain
+  - dairy
+  - fruit
+  - fat-oil
+  - other
